@@ -5,6 +5,18 @@
             "message": "Auto Commit",
             "autoCommit": true,
             "at": "*:*:00"
+        },
+        {
+            "path": "/Volumes/Data/Program/xxl-algorithm",
+            "message": "Auto Commit",
+            "autoCommit": true,
+            "at": "*/1:00:00"
+        },
+        {
+            "path": "/Volumes/Data/Files/Notes",
+            "message": "Auto Commit",
+            "autoCommit": true,
+            "at": "*/1:00:00"
         }
     ]
 }
