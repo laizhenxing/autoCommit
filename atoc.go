@@ -30,6 +30,7 @@ type cmd func(v ...interface{}) error
 
 func Execute(repo map[string]interface{}) {
 	fmt.Println("Auto Commit Start")
+
 	execute(add, repo["path"])
 	execute(commit, repo["path"], repo["message"])
 	execute(push, repo["path"])
@@ -83,7 +84,6 @@ func add(v ...interface{}) error {
 		return err
 	}
 	if err := cmd.Run(); err != nil {
-		fmt.Println(err)
 		return err
 	}
 
@@ -103,12 +103,11 @@ func commit(v ...interface{}) error {
 		return err
 	}
 	if err := cmd.Run(); err != nil {
-		fmt.Println(err)
 		return err
 	}
 
-	fmt.Println(output)
-
+	// output msg
+	fmt.Println("[push]", string(output))
 	return nil
 }
 
@@ -117,16 +116,17 @@ func push(v ...interface{}) error {
 
 	cmd := exec.Command("git", "push")
 	cmd.Dir = gitpath
-	fmt.Println("gitpath: ", cmd.Dir)
+
 	output, err := cmd.CombinedOutput()
-	fmt.Println("[push]", string(output))
+
 	if err != nil {
 		return err
 	}
 	if err := cmd.Run(); err != nil {
-		fmt.Println(err)
 		return err
 	}
 
+	// output msg
+	fmt.Println("[push]", string(output))
 	return nil
 }

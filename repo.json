@@ -1,13 +1,7 @@
 {
     "repos": [
         {
-            "path": "/path/to/Notes",
-            "message": "Auto Commit",
-            "autoCommit": true,
-            "at": "23:30:00"    
-        },
-        {
-            "path": "/path/to/xxl-algorithm",
+            "path": "/Volumes/Data/Program/go/src/autoCommit",
             "message": "Auto Commit",
             "autoCommit": true,
             "at": "*:*:00"
